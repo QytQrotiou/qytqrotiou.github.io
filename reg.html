@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>城市骑行 - 注册</title>
+    <style>
+        /* ----- 全局重置 & 字体 ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #51CD6A;
+            font-family: "Segoe UI", Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* ----- 导航栏 (与登录页完全一致) ----- */
+        .bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            padding: 0 40px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.24);
+            z-index: 99;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e3a5f;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #51CD6A;
+        }
+
+        .nav {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+        .nav a {
+            color: #1e3a5f;
+            font-size: 16px;
+            font-weight: 500;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .nav a:hover,
+        .nav a.active {
+            color: #51CD6A;
+            border-color: #51CD6A;
+        }
+
+        /* ----- 注册卡片容器 (与登录页一致) ----- */
+        .register-wrapper {
+            display: flex;
+            justify-content: center;
+            padding-top: 140px;
+            padding-bottom: 60px;
+        }
+
+        .register-card {
+            background: #fff;
+            border-radius: 28px;
+            padding: 48px 40px;
+            width: 480px;
+            max-width: 94%;
+            text-align: center;
+        }
+
+        /* ----- 头像 / 图标 ----- */
+        .icon-circle {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: #eafbf0;
+            margin: 0 auto 20px;
+            line-height: 72px;
+            font-size: 32px;
+        }
+
+        .register-card h2 {
+            font-size: 26px;
+            color: #1e3a5f;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            margin: 6px 0 28px;
+        }
+
+        /* ----- 表单 ----- */
+        .form-group {
+            text-align: left;
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e3a5f;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 15px;
+            border: 2px solid #e8ecf1;
+            border-radius: 14px;
+            outline: none;
+            background: #fff;
+            font-family: inherit;
+            transition: border 0.15s;
+            appearance: auto;
+        }
+
+        .form-group input::placeholder {
+            color: #b0bcc8;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #51CD6A;
+        }
+
+        /* 性别组 — 水平单选按钮 */
+        .gender-group {
+            display: flex;
+            gap: 28px;
+            padding-top: 4px;
+        }
+
+        .gender-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            font-size: 15px;
+            color: #1e3a5f;
+            cursor: pointer;
+        }
+
+        .gender-group input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #51CD6A;
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        /* 城市下拉框与邮箱保持风格一致 */
+        .form-group select {
+            color: #1e3a5f;
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            padding: 8px;
+        }
+
+        /* ----- 注册按钮 (与登录按钮完全一致) ----- */
+        .btn-register {
+            width: 100%;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: 700;
+            color: #fff;
+            background: #51CD6A;
+            border: none;
+            border-radius: 30px;
+            margin-top: 6px;
+            cursor: default;
+            /* 纯展示，无交互 */;
+        }
+
+        /* ----- 底部提示 (跳转登录) ----- */
+        .login-hint {
+            margin-top: 24px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .login-hint a {
+            color: #51CD6A;
+            font-weight: 600;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ====== 导航栏 (与登录页完全一致) ====== -->
+    <nav class="bar">
+        <div class="logo">城市<span>骑行</span></div>
+        <ul class="nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="way.html">路线</a></li>
+            <li><a href="#" class="active">注册</a></li>
+        </ul>
+    </nav>
+
+    <!-- ====== 注册卡片 ====== -->
+    <div class="register-wrapper">
+        <div class="register-card">
+
+            <!-- 图标 & 标题 -->
+            <div class="icon-circle">🚴</div>
+            <h2>加入城市骑行</h2>
+            <p class="subtitle">创建你的账户，开启绿色出行</p>
+
+            <!-- 注册表单 (纯展示，无功能) -->
+            <form>
+                <!-- 姓名 -->
+                <div class="form-group">
+                    <label for="fullname">姓名</label>
+                    <input type="text" id="fullname" placeholder="请输入你的姓名" />
+                </div>
+
+                <!-- 密码 -->
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" placeholder="请设置密码" />
+                </div>
+
+                <!-- 性别 (单选按钮) -->
+                <div class="form-group">
+                    <label>性别</label>
+                    <div class="gender-group">
+                        <label>
+                            <input type="radio" name="gender" value="male" checked />
+                            男
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="female" />
+                            女
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="other" />
+                            保密
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 城市 (下拉选择) -->
+                <div class="form-group">
+                    <label for="city">城市</label>
+                    <select id="city">
+                        <option value="" disabled selected>请选择你的城市</option>
+                        <option value="beijing">北京</option>
+                        <option value="shanghai">上海</option>
+                        <option value="guangzhou">广州</option>
+                        <option value="shenzhen">深圳</option>
+                        <option value="chengdu">成都</option>
+                        <option value="hangzhou">杭州</option>
+                        <option value="wuhan">武汉</option>
+                        <option value="nanjing">南京</option>
+                        <option value="chongqing">重庆</option>
+                        <option value="xian">西安</option>
+                    </select>
+                </div>
+
+                <!-- 邮箱 -->
+                <div class="form-group">
+                    <label for="email">邮箱</label>
+                    <input type="email" id="email" placeholder="请输入邮箱地址" />
+                </div>
+
+                <!-- 注册按钮 (仅展示) -->
+                <button type="button" class="btn-register">注 册</button>
+            </form>
+
+            <!-- 底部提示：已有账户？去登录 -->
+            <p class="login-hint">
+                已有账户？<a href="log in.html">去登录</a>
+            </p>
+
+        </div>
+    </div>
+
+</body>
+</html>

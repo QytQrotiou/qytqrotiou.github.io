@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>城市骑行 · 路线推荐</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #51CD6A;
+            font-family: "Segoe UI", Arial, sans-serif;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+        .bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            padding: 0 40px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.24);
+            z-index: 99;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e3a5f;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #51CD6A;
+        }
+        .nav {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+        .nav a {
+            color: #1e3a5f;
+            font-size: 16px;
+            font-weight: 500;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .nav a:hover,
+        .nav a.active {
+            color: #51CD6A;
+            border-color: #51CD6A;
+        }
+        .routes-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 140px 24px 40px;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .page-header h1 {
+            font-size: 32px;
+            color: #fff;
+            font-weight: 700;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        }
+        .page-header p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 8px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+        }
+        .card-img {
+            width: 100%;
+            height: 200px;
+            background: #eafbf0; /* 备用背景 */
+            overflow: hidden;
+        }
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .card:hover .card-img img {
+            transform: scale(1.03);
+        }
+
+        /* 卡片内容 */
+        .card-body {
+            padding: 24px 26px 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-body h3 {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .card-body p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #3d4e62;
+            flex: 1;
+        }
+
+        /* 简单装饰性标签 (可选) */
+        .card-tag {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 18px;
+            background: #51CD6A;
+            color: #fff;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            align-self: flex-start;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="bar">
+        <div class="logo">城市<span>骑行</span></div>
+        <ul class="nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="#" class="active">路线</a></li>
+            <li><a href="reg.html">注册</a></li>
+        </ul>
+    </nav>
+
+    <!-- ====== 路线页面主体 ====== -->
+    <div class="routes-container">
+        <!-- 页面头部 -->
+        <div class="page-header">
+            <h1>精选骑行路线</h1>
+            <p>穿梭城市脉络，发现不一样的美景</p>
+        </div>
+
+        <!-- 三张卡片 (完全使用你提供的结构) -->
+        <div class="card-grid">
+
+            <!-- 卡片 1：滨江绿道 -->
+            <article class="card">
+                <div class="card-img">
+                    <!-- 使用占位图服务 (可替换为真实图片) -->
+                    <img src="img/1.jpg" alt="滨江绿道骑行风景" />
+                </div>
+                <div class="card-body">
+                    <h3>滨江绿道</h3>
+                    <p>沿着母亲河蜿蜒的生态绿道，全程约18公里，串联起湿地公园、亲水平台和观鸟塔。道路平坦，两侧香樟与垂柳交错成荫，春日有樱花夹道，秋日银杏铺金。骑行途中，江风裹挟着水汽拂面，白鹭不时掠过水面，对岸的城市天际线在波光中若隐若现。沿途设有多处休憩驿站和共享单车停放点，适合家庭休闲或晨练慢骑。终点处的江畔广场常有市集和街头艺人表演，为你的骑行之旅增添一份烟火气。</p>
+                    <span class="card-tag">🌿 生态</span>
+                </div>
+            </article>
+
+            <!-- 卡片 2：古城骑行 -->
+            <article class="card">
+                <div class="card-img">
+                    <img src="img/2.jpg" alt="古城文化骑行" />
+                </div>
+                <div class="card-body">
+                    <h3>古城骑行</h3>
+                    <p>一条穿越千年时光的文化骑行线，全长约12公里，从古城南门出发，沿着青砖城墙根一路向北。你会经过三座明代敌楼、两处博物馆和一条百年石板老街。路面由仿古砖铺就，偶有缓坡，但整体轻松。骑过护城河上的石拱桥，能听见桥下流水潺潺；巷弄里飘来老字号的糕饼香气。中途可停靠古城墙遗址公园，俯瞰整座老城的棋盘格局。傍晚时分，夕阳映照在斑驳的城墙上，光影交错，仿佛骑行在历史画卷中。这条路线尤其适合喜欢人文摄影和慢节奏探索的骑友。</p>
+                    <span class="card-tag">🏛️ 历史</span>
+                </div>
+            </article>
+
+            <!-- 卡片 3：夜景专线 -->
+            <article class="card">
+                <div class="card-img">
+                    <img src="img/3.jpg" alt="城市夜景骑行" />
+                </div>
+                <div class="card-body">
+                    <h3>夜景专线</h3>
+                    <p>城市最璀璨的夜间骑行路线，全程约15公里，串联起CBD核心区、三座跨江大桥和滨江灯光秀带。路面平坦宽阔，设有专用非机动车道，夜骑安全系数高。华灯初上时，摩天楼的玻璃幕墙映出流动的光影，跨江大桥的霓虹倒映在江面，宛如星河坠落。路线经过音乐喷泉广场和观景平台，可停下欣赏持续20分钟的灯光表演。空气里弥漫着江水的湿润和街边咖啡店的香气，沿途24小时便利店和亮化公厕齐全。推荐晚间7点后出发，既能避开日间车流，又能沉浸在都市霓虹的浪漫氛围中。</p>
+                    <span class="card-tag">🌃 夜景</span>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+</body>
+</html>

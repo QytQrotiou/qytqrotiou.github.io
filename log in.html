@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>城市骑行 - 登录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #51CD6A;
+            font-family: "Segoe UI", Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        .bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            padding: 0 40px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.24);
+            z-index: 99;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e3a5f;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #51CD6A;
+        }
+        .nav {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+        .nav a {
+            color: #1e3a5f;
+            font-size: 16px;
+            font-weight: 500;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .nav a:hover,
+        .nav a.active {
+            color: #51CD6A;
+            border-color: #51CD6A;
+        }
+        .login-wrapper {
+            display: flex;
+            justify-content: center;
+            padding-top: 140px;
+        }
+
+        .login-card {
+            background: #fff;
+            border-radius: 28px;
+            padding: 48px 40px;
+            width: 440px;
+            text-align: center;
+        }
+
+        .icon-circle {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: #eafbf0;
+            margin: 0 auto 20px;
+            line-height: 72px;
+            font-size: 32px;
+        }
+
+        .login-card h2 {
+            font-size: 26px;
+            color: #1e3a5f;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            margin: 6px 0 32px;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e3a5f;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 15px;
+            border: 2px solid #e8ecf1;
+            border-radius: 14px;
+            outline: none;
+        }
+
+        .form-group input::placeholder {
+            color: #b0bcc8;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: 700;
+            color: #fff;
+            background: #51CD6A;
+            border: none;
+            border-radius: 30px;
+            margin-top: 6px;
+        }
+
+        .register-hint {
+            margin-top: 24px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .register-hint a {
+            color: #51CD6A;
+            font-weight: 600;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="bar">
+        <div class="logo">城市<span>骑行</span></div>
+        <ul class="nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="#">路线</a></li>
+            <li><a href="#" class="active">登录</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-wrapper">
+        <div class="login-card">
+            <div class="icon-circle">🖐️</div>
+            <h2>欢迎回来</h2>
+            <p class="subtitle">登录你的城市骑行账户</p>
+
+            <form>
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" placeholder="请输入用户名">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" placeholder="请输入密码">
+                </div>
+
+                <button type="button" class="btn-login">登 录</button>
+            </form>
+
+            <p class="register-hint">
+                还没有账户？<a href="reg.html">立即注册</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
